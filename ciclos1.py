@@ -16,12 +16,9 @@ int main() {
     printf("Ingrese un número: ");
     scanf("%d", &num);
 
-    if (num < 0) {
-        printf("Error: El número debe ser positivo.\n");
-        return 1;
-    }
-
-    for (int i = 1; i <= num; i++) {
-        factorial *= i;
-    }
+    if (num < 0)
+     { printf("Error: El número debe ser positivo.\n");
+     return 1;}
+    for (int i = 1; i <= num; i++) 
+    {factorial *= i;}
 
