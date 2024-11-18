@@ -12,30 +12,40 @@ Para genear un número entero aleatorio se utiliza la función randint
 del paquete random
 
 estructura:
-Module Program
-    Sub Main()
-        Dim aleatorio As Integer
-        Dim intentos As Integer = 10
-        Dim numero As Integer
 
-        ' Generar número aleatorio entre 1 y 100
-        Randomize()
-        aleatorio = CInt(Rnd() * 100) + 1
+import java.util.Scanner;
+// Inicio del programa y declaración de variables:
+public class Ej01AdivinaNumero {
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    int numeroAleatorio;
+    int intento;
+    int contador = 10;
 
-        Console.WriteLine("Adivine el número entre 1 y 100")
-
-        Do While intentos > 0
-            Console.Write("Ingrese un número: ")
-            numero = CInt(Console.ReadLine())
-
-            If numero < aleatorio Then
-                Console.WriteLine("El número a adivinar es mayor")
-            ElseIf numero > aleatorio Then
-                Console.WriteLine("El número a adivinar es menor")
-            Else
-                Console.WriteLine($"Felicitaciones! Adivinaste el número en {10 - intentos + 1} intentos")
-                Return
-            End If
-
-            intentos -= 1
-            Console.WriteLine($"Intentos restantes: {intentos}")
+    // Obtención de número aleatorio
+    numeroAleatorio = (int) (Math.random()*100+1);
+    System.out.println("Intenta adivinar un número aleatorio entre el 1 y 100. "
+        + "Tienes 10 intentos.");
+    System.out.println(numeroAleatorio);
+    // Realización del ciclo do-while
+    do {
+      System.out.println("Número contador: " + contador);
+      System.out.print("Introduce el número que creas posible: ");
+      intento = scanner.nextInt();
+      if (intento > numeroAleatorio) {
+        System.out.println("El número que buscas es menor, te quedan "
+            + (contador-1) + " intentos: ");
+      } else if (intento < numeroAleatorio){
+        System.out.println("El número que buscas es mayor, te quedan "
+            + (contador-1) + " intentos: ");
+      } else {
+        System.out.print("¡CORRECTO! "+ numeroAleatorio + " era el número que estabas "
+            + "buscando, has necesitado " + (10 - (contador-1)) +" intentos.");
+      }
+      contador--;
+    } while (intento != numeroAleatorio && contador > 0);
+    if (contador == 0) {
+      System.out.println("Has perdido. El numero aleatorio era " + numeroAleatorio);
+    }
+  }
+}
