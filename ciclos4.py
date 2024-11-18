@@ -4,12 +4,15 @@ ciclo for en python
 
 Programa que muestre la tabla de multiplicar de los números 1,2,3,4 y 5.
  
-# Función para imprimir la tabla de multiplicar de un número dado
-def imprimir_tabla(numero):
-    for i in range(1, 11):
-        print(f'{numero} x {i} = {numero * i}')
-    print('')  # Línea en blanco para separar las tablas
+estructura:
 
-# Imprimir las tablas de multiplicar del 1 al 5
-for numero in range(1, 6):
-    imprimir_tabla(numero)
+or i = 1 To 5
+            For j = 1 To 10
+                Console.WriteLine($"{i} x {j} = {i * j}")
+            Next j
+            Console.WriteLine()
+        Next i
+
+        Console.ReadKey()
+    End Sub
+End Module
