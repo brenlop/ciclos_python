@@ -12,6 +12,5 @@ Do While contador < 10
     suma = suma + num
     contador = contador + 1
 Loop
-
 Dim promedio As Double
 promedio = suma / 10
