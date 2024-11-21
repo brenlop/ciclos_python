@@ -15,14 +15,14 @@ Diseño
 2.- Si num1 es impar -> num1=num1+1
 3.- Desde num1 hasta num2 de 2 en 2
 4.- Escribir el número
-Proceso NumerosPares
-	Definir num,num1,num2 Como Entero;
-	Escribir Sin Saltar "Introduce el número 1:";
-	Leer num1;
-	Escribir Sin Saltar "Introduce el número 2:";
-	Leer num2;
-	Si num1 % 2 = 1 Entonces
-		num1<-num1+1;
+Proceso Numeros Pares
+Definir num,num1,num2 Como Entero;
+"Introduce el número 1:"
+print leer num1;
+Escribir Sin Saltar "Introduce el número 2:";
+Leer num2;
+Si num1 % 2 = 1 Entonces
+for i in range num1<-num1+1;
 FinSi
-	Para num<-num1 Hasta num2 Con Paso 2 Hacer
-			Escribir sin saltar num," ";
+Para num<-num1 Hasta num2 Con Paso 2 Hacer
+Escribir sin saltar num," ";
