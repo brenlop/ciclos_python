@@ -10,7 +10,7 @@ intentos lo has acertado), si se llega al limite de intentos te muestra el
 número que había generado.
 Para genear un número entero aleatorio se utiliza la función randint
 del paquete random
-
+"""
 estructura:
 
 import java.util.Scanner;

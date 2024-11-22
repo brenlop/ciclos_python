@@ -4,13 +4,11 @@ ciclos for en python
 
 Algoritmo que pida números hasta que se introduzca un cero. Debe imprimir la suma
 y la media de todos los números introducidos.
-
 Para este problema se requiere de un acumulador y un contador
-
 Contador: Variable que va, como su nombre lo indica, contando elementos (iteraciones),
 por cada iteración el contador va incrementando en 1
-
-#include <iostream>
+"""
+#include <iostream
 using namespace std;
 
 int main(int argc, char *argv[]) {
