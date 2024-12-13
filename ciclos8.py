@@ -1,28 +1,36 @@
-"""
-ciclo for en python
-
+'''
 Escribir un programa que imprima todos los números pares entre dos números que 
 se le pidan al usuario.
-"""
-Análisis
-Leemos un número. Si es impar, le sumo 1 y ya es par. Leemos el segundo número.
-Escribo el número desde el primero hasta el segundo de dos en dos.
- Datos de entrada: dos números
- Información de salida:Los números pares que hay entre los dos anteriores
- Variables:num, num1,num2 (entero)
-Diseño
-1.- Leer num1,num2
-2.- Si num1 es impar -> num1=num1+1
-3.- Desde num1 hasta num2 de 2 en 2
-4.- Escribir el número
-Proceso Numeros Pares
-Definir num,num1,num2 Como Entero;
-"Introduce el número 1:"
-print leer num1;
-Escribir Sin Saltar "Introduce el número 2:";
-Leer num2;
-Si num1 % 2 = 1 Entonces
-for i in range num1<-num1+1;
-FinSi
-Para num<-num1 Hasta num2 Con Paso 2 Hacer
-Escribir sin saltar num," ";
+'''
+# Versión profesional usando for y range
+print("\n=== Buscador de Números Pares ===")
+print("=" * 40)
+
+# Obtener y validar la entrada del usuario
+try:
+    num1 = int(input("Introduzca el primer número: "))
+    num2 = int(input("Introduzca el segundo número: "))
+    inicio = min(num1, num2)
+    fin = max(num1, num2)
+
+    if inicio % 2 != 0:
+        inicio += 1
+        
+    print("-" * 40)
+    print(f"Rango analizado: {min(num1, num2)} a {max(num1, num2)}")
+
+    pares = []
+    for numero in range(inicio, fin +1 ,2):
+        pares.append(numero)
+    if pares:
+        print("\nNúmeros pares encontrados:")
+        for i in range(0, len(pares), 10):
+            print(*pares[i:i+10], separacion="\t")
+        print(f"\nTotal de números pares: {len(pares)}")
+    else:
+        print("\nNo se encontraron números pares en el rango especificado")
+    
+except ValueError:
+    print("\nError: Por favor ingrese solo números enteros")
+
+print("\n" + "=" * 30)
