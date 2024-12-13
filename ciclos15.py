@@ -1,27 +1,34 @@
 """
-ciclos for python
-Realizar un programa que pida al usuario un número entero y muestre el mismo número en binario
+ciclo while
+
+while exp_booleana:
+    instrucciones
+    acatualizacion de valores
 """
-switch (centenas)
-case 0:
-texto = "";
- break;
- case 1:
-    texto = "Ciento";
-break;
-case 2:
-texto = "Doscientos";
- break;
- case 3:
-texto = "Trecientos";
-break;
-case 4:
- texto = "Cautrocientos";
- break;
-case 5:
-texto = "Quinientos";
- break;
-case 6:
- texto = "Seiscientos";
- break;
-            
+
+num = 1
+while num < 10:
+    print(f"Hello {num}")
+    num = num + 5
+
+    # Mas operadores matematicos
+"""
+n = n + 5 == n +=5
+n = n - 5 == n -=5
+n = n * 5 == n *=5
+n = n / 5 == n /=5
+"""
+
+"""
+Implementacion Do while (hacer, hasta) en python
+
+while True:
+   instruciones
+   if exp_bool:
+    breack
+"""
+
+while True:
+    option = input("escribe salir: ")
+    if option.upper == "salir":
+        break
