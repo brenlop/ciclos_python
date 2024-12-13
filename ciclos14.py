@@ -1,25 +1,29 @@
-"""
-ciclos for python 
+'''
 Mostrar en pantalla los N primero números primos. Se pide por teclado la cantidad 
 de números primos que queremos mostrar.
-"""
-System.out.println("1: 2");
-    contador = 1;
-    num = 3;
-    while (contador < numPrimos){
-esPrimo = true;
-divisor=3;
-while ((divisor<=Math.sqrt((num))) && esPrimo) {
-if (num%divisor==0) {
-esPrimo = false;
-}
-        divisor +=2;
-      }
-      if (esPrimo){
-        contador +=1;
-        System.out.println(contador + ": " + num);
-      }
-      num +=2;
-    }
-  }
-}
+'''
+
+cantidad = int(input("Introduce la cantidad de números primos y mostrar: "))
+
+
+numero = 2  
+mostrador = 0  
+
+
+while mostrador < cantidad:
+    es_primo = True
+    
+    
+    for i in range(2, int(numero ** 0.5) + 1):
+        
+        if numero % i == 0:
+            es_primo = False
+            break
+    
+    
+    if es_primo:
+        print(numero)
+        mostrador += 1
+    
+    
+    numero += 1
