@@ -1,7 +1,5 @@
-"""
-ciclos for en python 
-
-un programa que permita adivinar un número. La aplicación genera un 
+'''
+Crea un programa que permita adivinar un número. La aplicación genera un 
 número aleatorio del 1 al 100. A continuación va pidiendo números y va 
 respondiendo si el número a adivinar es mayor o menor que el introducido,
 a demás de los intentos que te quedan (tienes 10 intentos para acertarlo). 
@@ -10,42 +8,33 @@ intentos lo has acertado), si se llega al limite de intentos te muestra el
 número que había generado.
 Para genear un número entero aleatorio se utiliza la función randint
 del paquete random
-"""
-estructura:
 
-import java.util.Scanner;
-// Inicio del programa y declaración de variables:
-public class Ej01AdivinaNumero {
-  public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
-    int numeroAleatorio;
-    int intento;
-    int contador = 10;
+import random
+aleatorio = random.randint(limite_inf, limite_sup)
+'''
 
-    // Obtención de número aleatorio
-    numeroAleatorio = (int) (Math.random()*100+1);
-    System.out.println("Intenta adivinar un número aleatorio entre el 1 y 100. "
-        + "Tienes 10 intentos.");
-    System.out.println(numeroAleatorio);
-    // Realización del ciclo do-while
-    do {
-      System.out.println("Número contador: " + contador);
-      System.out.print("Introduce el número que creas posible: ");
-      intento = scanner.nextInt();
-      if (intento > numeroAleatorio) {
-        System.out.println("El número que buscas es menor, te quedan "
-            + (contador-1) + " intentos: ");
-      } else if (intento < numeroAleatorio){
-        System.out.println("El número que buscas es mayor, te quedan "
-            + (contador-1) + " intentos: ");
-      } else {
-        System.out.print("¡CORRECTO! "+ numeroAleatorio + " era el número que estabas "
-            + "buscando, has necesitado " + (10 - (contador-1)) +" intentos.");
-      }
-      contador--;
-    } while (intento != numeroAleatorio && contador > 0);
-    if (contador == 0) {
-      System.out.println("Has perdido. El numero aleatorio era " + numeroAleatorio);
-    }
-  }
-}
+import random
+
+# Generar número aleatorio entre 1 y 100
+numrandom = random.randint(1, 100)
+intentos = 10
+adivinado = False
+
+print("Adivina un número entre 1 y 100")
+print("Tienes 10 intentos para adivinarlo")
+
+while intentos > 0 and not adivinado:
+    print(f"\nTe quedan {intentos} intentos")
+    numero = int(input("Ingresa un número entero: "))
+    if numero == numrandom:
+        adivinado = True
+    elif numero < numrandom:
+        print( f"El  número secreto es MAYOR que el {numero}")
+    else:
+        print( f"El número secreto es MENOR que el {numero}")
+        
+    intentos -= 1
+if adivinado:
+    print(f"\n¡Felicitaciones! Has adivinado el número en {10 - intentos} intentos")
+else:
+    print(f"\nLo siento, te has quedado sin intentos. El número era {numrandom}")
