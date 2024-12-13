@@ -1,19 +1,17 @@
 """
-
-ciclo for en python 
-
-Programa que muestre la tabla de multiplicar de los números 1,2,3,4 y 5.
+Programa que muestre las primeras 5 tablas de multiplicar (la tabla del 1 ,2,3,4,5)
+Ejemplo:
+1x2=2
+2x3=6
+3x4=12
+5x4=20
 """
- 
-estructura:
+print("Tablas de Multiplicar del  1, 2, 3, 4, 5")
+print("-" * 12)
 
-or i = 1 To 5
-            For j = 1 To 10
-                Console.WriteLine($"{i} x {j} = {i * j}")
-            Next j
-            Console.WriteLine()
-        Next i
-
-        Console.ReadKey()
-    End Sub
-End Module
+for tabla in range(1, 6):
+    print(f"\nTabla de Multiplicar del numero  {tabla}:")
+    for i in range(1, 11):
+        resultado = tabla * i
+        print(f"{tabla} x {i} = {resultado}")
+    print("-" * 20)
